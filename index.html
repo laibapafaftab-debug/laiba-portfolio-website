@@ -1,0 +1,1647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Laiba Aftab | Web Developer & AI Automation</title>
+
+  <meta
+    name="description"
+    content="Laiba Aftab — Web Developer & AI Automation specialist building modern websites, Python applications, AI workflows and practical business automations."
+  />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, Arial, sans-serif;
+      background: #08090d;
+      color: #f5f7fa;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    /* ================= NAVBAR ================= */
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      backdrop-filter: blur(16px);
+      background: rgba(8, 9, 13, 0.78);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav-container {
+      max-width: 1180px;
+      margin: auto;
+      padding: 18px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: #65e6d2;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #b9bec8;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #65e6d2;
+    }
+
+    .nav-btn {
+      padding: 10px 17px;
+      border-radius: 9px;
+      background: #65e6d2;
+      color: #07100e;
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+      min-height: 100vh;
+      max-width: 1180px;
+      margin: auto;
+      padding: 160px 25px 100px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      padding: 7px 13px;
+      border: 1px solid rgba(101,230,210,0.25);
+      background: rgba(101,230,210,0.06);
+      border-radius: 50px;
+      color: #65e6d2;
+      font-size: 13px;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-size: clamp(48px, 7vw, 78px);
+      line-height: 0.98;
+      letter-spacing: -4px;
+      max-width: 850px;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 span {
+      color: #65e6d2;
+    }
+
+    .hero p {
+      color: #a8adb8;
+      font-size: 18px;
+      max-width: 670px;
+      margin-bottom: 34px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 13px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 21px;
+      border-radius: 10px;
+      font-weight: 700;
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: #65e6d2;
+      color: #07100e;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.13);
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      border-color: #65e6d2;
+    }
+
+    .hero-card {
+      border: 1px solid rgba(255,255,255,0.1);
+      background: linear-gradient(145deg, #11131a, #0b0d12);
+      border-radius: 22px;
+      padding: 25px;
+      box-shadow: 0 30px 100px rgba(0,0,0,0.4);
+    }
+
+    .terminal-top {
+      display: flex;
+      gap: 7px;
+      margin-bottom: 25px;
+    }
+
+    .terminal-top i {
+      width: 10px;
+      height: 10px;
+      background: #383c46;
+      border-radius: 50%;
+    }
+
+    .code-line {
+      color: #727985;
+      font-family: monospace;
+      margin: 12px 0;
+    }
+
+    .code-green {
+      color: #65e6d2;
+    }
+
+    .code-purple {
+      color: #b999ff;
+    }
+
+    .code-blue {
+      color: #75aaff;
+    }
+
+    /* ================= GENERAL ================= */
+
+    section {
+      max-width: 1180px;
+      margin: auto;
+      padding: 100px 25px;
+    }
+
+    .section-label {
+      color: #65e6d2;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 13px;
+    }
+
+    .section-title {
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.05;
+      letter-spacing: -2px;
+      margin-bottom: 18px;
+    }
+
+    .section-intro {
+      color: #969ca8;
+      max-width: 680px;
+      margin-bottom: 45px;
+    }
+
+    /* ================= PROBLEMS ================= */
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .problem-card {
+      padding: 25px;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      background: #0e1016;
+    }
+
+    .problem-icon {
+      font-size: 25px;
+      margin-bottom: 20px;
+    }
+
+    .problem-card h3 {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .problem-card p {
+      color: #9298a4;
+      font-size: 14px;
+    }
+
+    /* ================= SERVICES ================= */
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 30px;
+      background: #0d0f14;
+    }
+
+    .service-card h3 {
+      margin-bottom: 10px;
+      font-size: 22px;
+    }
+
+    .service-card p {
+      color: #9298a4;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .service-card ul {
+      list-style: none;
+      color: #c3c7cf;
+      font-size: 14px;
+    }
+
+    .service-card li {
+      margin: 9px 0;
+    }
+
+    .service-card li::before {
+      content: "✓";
+      color: #65e6d2;
+      margin-right: 9px;
+    }
+
+    /* ================= PROJECTS ================= */
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .project {
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 20px;
+      overflow: hidden;
+      background: #0d0f14;
+      transition: 0.35s;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      border-color: rgba(101,230,210,0.3);
+    }
+
+    .project-visual {
+      min-height: 220px;
+      padding: 28px;
+      background:
+        radial-gradient(circle at 80% 20%, rgba(101,230,210,0.14), transparent 35%),
+        #11131a;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .workflow {
+      width: 100%;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .node {
+      border: 1px solid rgba(101,230,210,0.35);
+      background: #0b1112;
+      padding: 10px 13px;
+      border-radius: 8px;
+      font-size: 12px;
+      color: #dce2e6;
+    }
+
+    .arrow {
+      color: #65e6d2;
+    }
+
+    .project-content {
+      padding: 25px;
+    }
+
+    .project-tag {
+      color: #65e6d2;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .project h3 {
+      font-size: 24px;
+      margin: 8px 0 10px;
+    }
+
+    .project p {
+      color: #9298a4;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    .tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 20px;
+    }
+
+    .tech span {
+      padding: 5px 9px;
+      background: #171a21;
+      border-radius: 6px;
+      color: #b7bdc7;
+      font-size: 11px;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 17px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .project-links a {
+      color: #65e6d2;
+    }
+
+    /* ================= AUTOMATION ================= */
+
+    .automation-box {
+      border: 1px solid rgba(101,230,210,0.18);
+      border-radius: 22px;
+      padding: 40px;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(101,230,210,0.09), transparent 45%),
+        #0c0f13;
+    }
+
+    .automation-flow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 35px;
+    }
+
+    .automation-node {
+      padding: 17px 22px;
+      border-radius: 12px;
+      background: #14181d;
+      border: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+    }
+
+    .automation-node strong {
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .automation-node small {
+      color: #7e8590;
+    }
+
+    .automation-arrow {
+      color: #65e6d2;
+      font-size: 22px;
+    }
+
+    /* ================= ABOUT ================= */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about-box {
+      border: 1px solid rgba(255,255,255,0.08);
+      background: #0e1016;
+      border-radius: 20px;
+      padding: 35px;
+    }
+
+    .about-box p {
+      color: #a0a6b0;
+      margin-bottom: 18px;
+    }
+
+    .about-list {
+      list-style: none;
+      margin-top: 25px;
+    }
+
+    .about-list li {
+      margin: 12px 0;
+      color: #cbd0d8;
+    }
+
+    .about-list span {
+      color: #65e6d2;
+    }
+
+    /* ================= STACK ================= */
+
+    .stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .stack span {
+      padding: 12px 17px;
+      border: 1px solid rgba(255,255,255,0.09);
+      background: #101219;
+      border-radius: 9px;
+      color: #c7ccd4;
+    }
+
+    /* ================= PROCESS ================= */
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 15px;
+    }
+
+    .step {
+      border-top: 1px solid rgba(101,230,210,0.4);
+      padding-top: 18px;
+    }
+
+    .step-number {
+      color: #65e6d2;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .step h3 {
+      margin: 8px 0;
+    }
+
+    .step p {
+      color: #858b96;
+      font-size: 13px;
+    }
+
+    /* ================= CONTACT ================= */
+
+    .contact {
+      text-align: center;
+      padding-bottom: 130px;
+    }
+
+    .contact-box {
+      border: 1px solid rgba(101,230,210,0.2);
+      border-radius: 25px;
+      padding: 70px 30px;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(101,230,210,0.12), transparent 45%),
+        #0d1015;
+    }
+
+    .contact h2 {
+      font-size: clamp(36px, 6vw, 60px);
+      letter-spacing: -2px;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .contact p {
+      max-width: 620px;
+      margin: auto auto 30px;
+      color: #969ca8;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding: 30px 25px;
+      color: #727985;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .problem-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .services {
+        grid-template-columns: 1fr;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 650px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .problem-grid,
+      .project-grid,
+      .process {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 75px 20px;
+      }
+
+      .hero {
+        padding: 130px 20px 75px;
+      }
+
+      .automation-box {
+        padding: 25px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+
+  <nav>
+    <div class="nav-container">
+
+      <a href="#" class="logo">
+        Laiba<span>.</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#automation">Automation</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <a href="#contact" class="nav-btn">
+        Let's Talk
+      </a>
+
+    </div>
+  </nav>
+
+
+  <!-- ================= HERO ================= -->
+
+  <header class="hero">
+
+    <div>
+
+      <div class="eyebrow">
+        Web Development + AI Automation
+      </div>
+
+      <h1>
+        I build websites
+        <span>&</span>
+        automate business workflows.
+      </h1>
+
+      <p>
+        I help businesses build modern websites and practical
+        AI-powered automations that improve their online presence,
+        capture leads, and reduce repetitive work.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="#work" class="btn btn-primary">
+          View My Work
+        </a>
+
+        <a href="#contact" class="btn btn-secondary">
+          Let's Work Together
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="hero-card">
+
+      <div class="terminal-top">
+        <i></i>
+        <i></i>
+        <i></i>
+      </div>
+
+      <div class="code-line">
+        <span class="code-purple">const</span>
+        developer = {
+      </div>
+
+      <div class="code-line">
+        name:
+        <span class="code-green">"Laiba Aftab"</span>
+      </div>
+
+      <div class="code-line">
+        frontend:
+        <span class="code-blue">"Next.js"</span>
+      </div>
+
+      <div class="code-line">
+        backend:
+        <span class="code-green">"Python"</span>
+      </div>
+
+      <div class="code-line">
+        automation:
+        <span class="code-blue">"n8n"</span>
+      </div>
+
+      <div class="code-line">
+        focus:
+        <span class="code-green">"Business Solutions"</span>
+      </div>
+
+      <div class="code-line">
+        };
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- ================= BUSINESS PROBLEMS ================= -->
+
+  <section>
+
+    <div class="section-label">
+      Business Problems
+    </div>
+
+    <h2 class="section-title">
+      What can I help you solve?
+    </h2>
+
+    <p class="section-intro">
+      Businesses often lose time because their websites, leads,
+      and repetitive processes are handled manually. I build
+      practical digital solutions to simplify those workflows.
+    </p>
+
+
+    <div class="problem-grid">
+
+      <div class="problem-card">
+        <div class="problem-icon">🌐</div>
+        <h3>Need a Better Website?</h3>
+        <p>
+          Modern responsive websites and landing pages
+          designed around your business goals.
+        </p>
+      </div>
+
+      <div class="problem-card">
+        <div class="problem-icon">📩</div>
+        <h3>Losing Track of Leads?</h3>
+        <p>
+          Automate lead capture, qualification,
+          notifications, and follow-ups.
+        </p>
+      </div>
+
+      <div class="problem-card">
+        <div class="problem-icon">🔁</div>
+        <h3>Repeating the Same Tasks?</h3>
+        <p>
+          Use AI, APIs, webhooks and workflows
+          to reduce repetitive manual work.
+        </p>
+      </div>
+
+      <div class="problem-card">
+        <div class="problem-icon">🔗</div>
+        <h3>Tools Not Connected?</h3>
+        <p>
+          Connect websites, forms, email, databases,
+          APIs and automation platforms.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= SERVICES ================= -->
+
+  <section id="services">
+
+    <div class="section-label">
+      Services
+    </div>
+
+    <h2 class="section-title">
+      What I Build
+    </h2>
+
+    <p class="section-intro">
+      From websites to backend applications and automated
+      workflows, I focus on practical solutions that solve
+      a specific problem.
+    </p>
+
+
+    <div class="services">
+
+      <div class="service-card">
+
+        <h3>🌐 Web Development</h3>
+
+        <p>
+          Modern digital experiences for businesses,
+          startups and entrepreneurs.
+        </p>
+
+        <ul>
+          <li>Business Websites</li>
+          <li>Landing Pages</li>
+          <li>E-commerce Websites</li>
+          <li>Responsive Frontends</li>
+          <li>Web Applications</li>
+          <li>Website Redesign</li>
+        </ul>
+
+      </div>
+
+
+      <div class="service-card">
+
+        <h3>🤖 AI Automation</h3>
+
+        <p>
+          Practical workflows that automate repetitive
+          business processes.
+        </p>
+
+        <ul>
+          <li>Lead Capture</li>
+          <li>Lead Qualification</li>
+          <li>Email Automation</li>
+          <li>AI Assistants</li>
+          <li>Workflow Automation</li>
+          <li>API Integrations</li>
+        </ul>
+
+      </div>
+
+
+      <div class="service-card">
+
+        <h3>🐍 Python Development</h3>
+
+        <p>
+          Backend and automation solutions built
+          with Python.
+        </p>
+
+        <ul>
+          <li>FastAPI Applications</li>
+          <li>REST APIs</li>
+          <li>Database Integration</li>
+          <li>Automation Scripts</li>
+          <li>AI/API Integration</li>
+          <li>Backend Development</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= FEATURED WORK ================= -->
+
+  <section id="work">
+
+    <div class="section-label">
+      Selected Work
+    </div>
+
+    <h2 class="section-title">
+      Built projects, not just ideas.
+    </h2>
+
+    <p class="section-intro">
+      A selection of websites, applications and automation
+      workflows I've built while developing my skills.
+    </p>
+
+
+    <div class="project-grid">
+
+
+      <!-- PROJECT 1 -->
+
+      <article class="project">
+
+        <div class="project-visual">
+
+          <div class="workflow">
+
+            <div class="node">
+              Website Visitor
+            </div>
+
+            <div class="arrow">→</div>
+
+            <div class="node">
+              AI Chat
+            </div>
+
+            <div class="arrow">→</div>
+
+            <div class="node">
+              Lead Capture
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="project-content">
+
+          <div class="project-tag">
+            AI Automation · Python
+          </div>
+
+          <h3>
+            AI Lead Capture Widget
+          </h3>
+
+          <p>
+            An AI-powered website chat widget that can interact
+            with visitors, detect email addresses and store
+            captured lead information.
+          </p>
+
+          <div class="tech">
+            <span>Python</span>
+            <span>FastAPI</span>
+            <span>Gemini API</span>
+            <span>SQLite</span>
+            <span>JavaScript</span>
+          </div>
+
+          <div class="project-links">
+
+            <a
+              href="https://github.com/laibapafaftab-debug/ai-lead-widget"
+              target="_blank"
+            >
+              GitHub →
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- PROJECT 2 -->
+
+      <article class="project">
+
+        <div class="project-visual">
+
+          <div class="workflow">
+
+            <div class="node">
+              Lead In
+            </div>
+
+            <div class="arrow">→</div>
+
+            <div class="node">
+              Qualify
+            </div>
+
+            <div class="arrow">→</div>
+
+            <div class="node">
+              Route
+            </div>
+
+            <div class="arrow">→</div>
+
+            <div class="node">
+              Nurture
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="project-content">
+
+          <div class="project-tag">
+            n8n · Lead Automation
+          </div>
+
+          <h3>
+            AI Lead Qualification & Nurture
+          </h3>
+
+          <p>
+            An automated lead-management workflow that receives
+            leads, qualifies them, routes them into different
+            paths, and manages follow-up emails.
+          </p>
+
+          <div class="tech">
+            <span>n8n</span>
+            <span>Webhooks</span>
+            <span>Google Sheets</span>
+            <span>Email Automation</span>
+          </div>
+
+          <div class="project-links">
+
+            <a href="#automation">
+              View Workflow →
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- PROJECT 3 -->
+
+      <article class="project">
+
+        <div class="project-visual">
+
+          <div class="workflow">
+
+            <div class="node">
+              Gmail
+            </div>
+
+            <div class="arrow">→</div>
+
+            <div class="node">
+              AI Research
+            </div>
+
+            <div class="arrow">→</div>
+
+            <div class="node">
+              Web Search
+            </div>
+
+            <div class="arrow">→</div>
+
+            <div class="node">
+              Reply
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="project-content">
+
+          <div class="project-tag">
+            AI Automation · n8n
+          </div>
+
+          <h3>
+            AI Email Research Assistant
+          </h3>
+
+          <p>
+            An automated email workflow that processes incoming
+            emails, researches relevant information and generates
+            a response through Gmail.
+          </p>
+
+          <div class="tech">
+            <span>n8n</span>
+            <span>OpenAI</span>
+            <span>Gmail</span>
+            <span>Web Search</span>
+          </div>
+
+          <div class="project-links">
+
+            <a href="#automation">
+              View Workflow →
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- PROJECT 4 -->
+
+      <article class="project">
+
+        <div class="project-visual">
+
+          <div class="workflow">
+
+            <div class="node">
+              Framer
+            </div>
+
+            <div class="arrow">→</div>
+
+            <div class="node">
+              Business Website
+            </div>
+
+            <div class="arrow">→</div>
+
+            <div class="node">
+              Automation
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="project-content">
+
+          <div class="project-tag">
+            Web Development · Demo
+          </div>
+
+          <h3>
+            AuraStudio
+          </h3>
+
+          <p>
+            A modern business website concept combining
+            professional web development with AI automation
+            solutions and lead-focused workflows.
+          </p>
+
+          <div class="tech">
+            <span>Framer</span>
+            <span>Next.js</span>
+            <span>Python</span>
+            <span>n8n</span>
+          </div>
+
+          <div class="project-links">
+
+            <a
+              href="https://laibapafaftab-debug.github.io/custom-web-demo/"
+              target="_blank"
+            >
+              Live Demo →
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- PROJECT 5 -->
+
+      <article class="project">
+
+        <div class="project-visual">
+
+          <div class="workflow">
+
+            <div class="node">
+              HTML5
+            </div>
+
+            <div class="arrow">+</div>
+
+            <div class="node">
+              CSS3
+            </div>
+
+            <div class="arrow">+</div>
+
+            <div class="node">
+              JavaScript
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="project-content">
+
+          <div class="project-tag">
+            Frontend · Internship
+          </div>
+
+          <h3>
+            TaskFlow
+          </h3>
+
+          <p>
+            A responsive landing page built from scratch with
+            semantic HTML, CSS Grid, Flexbox and Vanilla JavaScript.
+          </p>
+
+          <div class="tech">
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>Flexbox</span>
+            <span>CSS Grid</span>
+            <span>JavaScript</span>
+          </div>
+
+          <div class="project-links">
+
+            <a
+              href="https://laibapafaftab-debug.github.io/responsive-landing-page/"
+              target="_blank"
+            >
+              Live Demo →
+            </a>
+
+            <a
+              href="https://github.com/laibapaftab-debug/responsive-landing-page"
+              target="_blank"
+            >
+              GitHub →
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- PROJECT 6 -->
+
+      <article class="project">
+
+        <div class="project-visual">
+
+          <div class="workflow">
+
+            <div class="node">
+              SEO
+            </div>
+
+            <div class="arrow">→</div>
+
+            <div class="node">
+              Performance
+            </div>
+
+            <div class="arrow">→</div>
+
+            <div class="node">
+              Responsive UI
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="project-content">
+
+          <div class="project-tag">
+            Web Development · SEO
+          </div>
+
+          <h3>
+            SEO That Gets You Found
+          </h3>
+
+          <p>
+            A professional SEO landing page focused on technical
+            SEO, website performance, mobile optimization and
+            search-friendly web development.
+          </p>
+
+          <div class="tech">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>Next.js</span>
+            <span>SEO</span>
+          </div>
+
+          <div class="project-links">
+
+            <a
+              href="https://laibapafaftab-debug.github.io/SEO-landing-page/"
+              target="_blank"
+            >
+              Live Demo →
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= AUTOMATION DEMO ================= -->
+
+  <section id="automation">
+
+    <div class="section-label">
+      Automation
+    </div>
+
+    <h2 class="section-title">
+      See how a lead can move through an automated workflow.
+    </h2>
+
+    <p class="section-intro">
+      Instead of manually handling every lead, a workflow can
+      capture, qualify, route, respond and nurture prospects.
+    </p>
+
+
+    <div class="automation-box">
+
+      <div class="automation-flow">
+
+        <div class="automation-node">
+          <strong>📩 Lead In</strong>
+          <small>New lead</small>
+        </div>
+
+        <div class="automation-arrow">→</div>
+
+        <div class="automation-node">
+          <strong>🧠 Qualify</strong>
+          <small>Check criteria</small>
+        </div>
+
+        <div class="automation-arrow">→</div>
+
+        <div class="automation-node">
+          <strong>🔀 Route</strong>
+          <small>Qualified?</small>
+        </div>
+
+        <div class="automation-arrow">→</div>
+
+        <div class="automation-node">
+          <strong>📊 Log</strong>
+          <small>Google Sheets</small>
+        </div>
+
+        <div class="automation-arrow">→</div>
+
+        <div class="automation-node">
+          <strong>📧 Follow Up</strong>
+          <small>Email sequence</small>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= ABOUT ================= -->
+
+  <section id="about">
+
+    <div class="about-grid">
+
+      <div>
+
+        <div class="section-label">
+          About Me
+        </div>
+
+        <h2 class="section-title">
+          Developer focused on useful solutions.
+        </h2>
+
+      </div>
+
+
+      <div class="about-box">
+
+        <p>
+          I'm a Computer Science student and Web Developer focused
+          on building modern websites, web applications and
+          practical AI automations.
+        </p>
+
+        <p>
+          I work with Next.js, Python, n8n, APIs and modern web
+          technologies to turn ideas and repetitive business
+          processes into working digital solutions.
+        </p>
+
+        <p>
+          I'm especially interested in combining web development
+          with automation so a website can become more than just
+          an online presence.
+        </p>
+
+        <ul class="about-list">
+
+          <li>
+            <span>→</span> Web Development
+          </li>
+
+          <li>
+            <span>→</span> AI Workflow Automation
+          </li>
+
+          <li>
+            <span>→</span> Python Development
+          </li>
+
+          <li>
+            <span>→</span> API Integrations
+          </li>
+
+          <li>
+            <span>→</span> SaaS & Product Development
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= TECH STACK ================= -->
+
+  <section>
+
+    <div class="section-label">
+      Tech Stack
+    </div>
+
+    <h2 class="section-title">
+      Technologies I work with.
+    </h2>
+
+    <p class="section-intro">
+      A growing technical stack focused on modern web development,
+      backend systems and business automation.
+    </p>
+
+    <div class="stack">
+
+      <span>HTML5</span>
+      <span>CSS3</span>
+      <span>JavaScript</span>
+      <span>Next.js</span>
+      <span>Python</span>
+      <span>FastAPI</span>
+      <span>n8n</span>
+      <span>REST APIs</span>
+      <span>Webhooks</span>
+      <span>OpenAI</span>
+      <span>Gemini API</span>
+      <span>SQLite</span>
+      <span>Git</span>
+      <span>GitHub</span>
+      <span>Framer</span>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= PROCESS ================= -->
+
+  <section>
+
+    <div class="section-label">
+      Process
+    </div>
+
+    <h2 class="section-title">
+      From idea to working solution.
+    </h2>
+
+
+    <div class="process">
+
+      <div class="step">
+        <div class="step-number">01</div>
+        <h3>Understand</h3>
+        <p>
+          Understand the business problem and requirements.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">02</div>
+        <h3>Plan</h3>
+        <p>
+          Define the structure, workflow and integrations.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">03</div>
+        <h3>Build</h3>
+        <p>
+          Develop the website, application or automation.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">04</div>
+        <h3>Test</h3>
+        <p>
+          Test functionality, responsiveness and workflows.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">05</div>
+        <h3>Launch</h3>
+        <p>
+          Deploy the solution and provide the necessary handover.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= CONTACT ================= -->
+
+  <section id="contact" class="contact">
+
+    <div class="contact-box">
+
+      <div class="section-label">
+        Let's Build
+      </div>
+
+      <h2>
+        Have a website idea<br />
+        or workflow to automate?
+      </h2>
+
+      <p>
+        Tell me what you're trying to build or what repetitive
+        process you'd like to simplify. Let's discuss a practical
+        solution.
+      </p>
+
+      <a
+        href="mailto:laibaaftab@gmail.com"
+        class="btn btn-primary"
+      >
+        Start a Conversation
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+
+    © 2026 Laiba Aftab · Web Development & AI Automation
+
+  </footer>
+
+
+  <script>
+
+    // Simple reveal animation
+
+    const elements = document.querySelectorAll(
+      ".project, .problem-card, .service-card, .step, .about-box"
+    );
+
+    const observer = new IntersectionObserver(
+      entries => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.12
+      }
+    );
+
+
+    elements.forEach(element => {
+
+      element.style.opacity = "0";
+      element.style.transform = "translateY(20px)";
+      element.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+
+      observer.observe(element);
+
+    });
+
+  </script>
+
+</body>
+</html>
